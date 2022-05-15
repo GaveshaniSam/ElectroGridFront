@@ -107,18 +107,18 @@ public String insertTransmissions(String no, String area, String name, String vo
 			 }
 			 
 		 // create a prepared statement
-		 String query = " insert into distribution (`transID`,`no`,`area`,`name`,`voltage`,`date`,`time`)" + " values (?, ?, ?, ?, ?, ?,?)";
+		 String query = " insert into distribution (`no`,`area`,`name`,`voltage`,`date`,`time`)" + " values (?, ?, ?, ?, ?, ?,?)";
 		 
 				 PreparedStatement preparedStmt = con.prepareStatement(query);
 				 
 				 // binding values
-				 preparedStmt.setInt(1, 0);
-				 preparedStmt.setString(2, no);
-				 preparedStmt.setString(3, area);
-				 preparedStmt.setString(4, name);
-				 preparedStmt.setString(5, voltage);
-				 preparedStmt.setString(6, date);
-				 preparedStmt.setString(7, time);
+				 //preparedStmt.setInt(1, 0);
+				 preparedStmt.setString(1, no);
+				 preparedStmt.setString(2, area);
+				 preparedStmt.setString(3, name);
+				 preparedStmt.setString(4, voltage);
+				 preparedStmt.setString(5, date);
+				 preparedStmt.setString(6, time);
 				 
 				 // execute the statement
 				 preparedStmt.execute();
